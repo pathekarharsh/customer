@@ -22,7 +22,7 @@ function ProductCard(props) {
 
 function ProductList() {
   return (
-    <div className="product-card-page">
+    <div className="product-list-page">
       <nav className="top-nav">
         <ul>
           <li><Link to="/product/fresh">Fresh Vegetables</Link></li>
@@ -30,7 +30,7 @@ function ProductList() {
           <li><Link to="/product/freshly-cut">Freshly Cut</Link></li>
         </ul>
       </nav>
-      <div className="product-card-container">
+      <div className="product-list-container">
         <ProductCard
           image="https://via.placeholder.com/150x150"
           title="Product name"
@@ -56,7 +56,7 @@ function ProductList() {
           price="Rs.120"
         />
       </div>
-      <div className="product-card-container">
+      <div className="product-list-container">
         <ProductCard
           image="https://via.placeholder.com/150x150"
           title="Product name"
