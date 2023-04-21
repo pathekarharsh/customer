@@ -1,10 +1,10 @@
 import React from 'react'
-import Main from '../Components/Main'
+import First from '../Components/First/first'
 
 const Dashboard = () => {
   return (
       <div>
-          <Main />
+          <First />
     </div>
   )
 }

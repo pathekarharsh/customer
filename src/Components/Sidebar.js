@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsFillPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import {
+  FaHome,
+  FaUser,
+  FaShoppingCart,
+  FaSignOutAlt,
+} from "react-icons/fa";
+import "./Sidebar.css";
+import User from "../Assets/user.png";
 
 function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -19,36 +25,37 @@ function Sidebar() {
         <span></span>
       </button>
       <div className={`container2 ${showSidebar ? "show-sidebar" : ""}`}>
-        <div className="profile">
-          <div className="doc-info">
-            <h3>Inventory Manager</h3>
-          </div>
+      <div className="sidebar-header">
+          <img src={User} alt="User profile" className="user-profile" />
+          <h3 className="user-name">User Name</h3>
+          <p className="user-email">user@email.com</p>
         </div>
-        <div className="buttons">
-          <div className="db-btn">
-            <button>
-              <Link to="/home" className="up-btn">Home</Link></button>
-          </div>
-          <div className="db-btn">
-            <button> <Link to="/logout" className="up-btn">Logout</Link></button>
-          </div>
-        </div>
-        <div className="inventory-manager">
-          <button>
-            <BsFillPersonFill className="route-btn" size={22} style={{ color: "black" }} />
-            <Link to="/" className="heading">
-              <h3>Inventory Manager</h3>
+        <ul className="sidebar-links">
+          <li>
+            <Link to="/home">
+              <FaHome size={25} />
+              <span>Home</span>
             </Link>
-          </button>
-        </div>
-        <div className="inventory-manager">
-          <button>
-            <AiOutlineShoppingCart className="route-btn" size={22} style={{ color: "black" }} />
-            <Link to="/orderqueue" className="heading">
-              <h3>Order Queue</h3>
+          </li>
+          <li>
+            <Link to="/orders">
+              <FaShoppingCart size={25}/>
+              <span>Orders</span>
             </Link>
-          </button>
-        </div>
+          </li>
+          <li>
+            <Link to="/profile">
+              <FaUser size={25}/>
+              <span>Profile</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/logout">
+              <FaSignOutAlt size={25}/>
+              <span>Logout</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </>
   );
