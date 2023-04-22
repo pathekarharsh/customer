@@ -14,7 +14,7 @@ function ProductCard(props) {
       <p className="product-weight">{weight}</p>
       <div className="product-price">
         <p>{price}</p>
-        <button>Add to cart</button>
+        <button><Link to="/productdetails">Add to cart</Link></button>
       </div>
     </div>
   );
